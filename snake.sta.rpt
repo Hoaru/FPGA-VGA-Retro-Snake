@@ -1,0 +1,983 @@
+TimeQuest Timing Analyzer report for snake
+Mon Dec 23 16:13:06 2019
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 100C Model Fmax Summary
+  6. Slow 1200mV 100C Model Setup Summary
+  7. Slow 1200mV 100C Model Hold Summary
+  8. Slow 1200mV 100C Model Recovery Summary
+  9. Slow 1200mV 100C Model Removal Summary
+ 10. Slow 1200mV 100C Model Minimum Pulse Width
+ 11. Setup Times
+ 12. Hold Times
+ 13. Clock to Output Times
+ 14. Minimum Clock to Output Times
+ 15. Slow 1200mV -40C Model Fmax Summary
+ 16. Slow 1200mV -40C Model Setup Summary
+ 17. Slow 1200mV -40C Model Hold Summary
+ 18. Slow 1200mV -40C Model Recovery Summary
+ 19. Slow 1200mV -40C Model Removal Summary
+ 20. Slow 1200mV -40C Model Minimum Pulse Width
+ 21. Setup Times
+ 22. Hold Times
+ 23. Clock to Output Times
+ 24. Minimum Clock to Output Times
+ 25. Fast 1200mV -40C Model Setup Summary
+ 26. Fast 1200mV -40C Model Hold Summary
+ 27. Fast 1200mV -40C Model Recovery Summary
+ 28. Fast 1200mV -40C Model Removal Summary
+ 29. Fast 1200mV -40C Model Minimum Pulse Width
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Slow Corner Signal Integrity Metrics
+ 42. Fast Corner Signal Integrity Metrics
+ 43. Setup Transfers
+ 44. Hold Transfers
+ 45. Report TCCS
+ 46. Report RSKM
+ 47. Unconstrained Paths
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name      ; snake                                            ;
+; Device Family      ; Cyclone III                                      ;
+; Device Name        ; EP3C55F484I7                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Enabled                                          ;
++--------------------+--------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                              ;
++-------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+---------------------------------------------------------+-----------------------------------------------------------+
+; Clock Name                                            ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master  ; Source                                                  ; Targets                                                   ;
++-------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+---------------------------------------------------------+-----------------------------------------------------------+
+; sys_clk                                               ; Base      ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;         ;                                                         ; { sys_clk }                                               ;
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Generated ; 40.000 ; 25.0 MHz  ; 0.000 ; 20.000 ; 50.00      ; 2         ; 1           ;       ;        ;           ;            ; false    ; sys_clk ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0] ; { u_vga_pll|altpll_component|auto_generated|pll1|clk[0] } ;
++-------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------+---------------------------------------------------------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Fmax Summary                                                        ;
++-----------+-----------------+-------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                            ; Note ;
++-----------+-----------------+-------------------------------------------------------+------+
+; 25.34 MHz ; 25.34 MHz       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
++-----------+-----------------+-------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Setup Summary                                          ;
++-------------------------------------------------------+-------+---------------+
+; Clock                                                 ; Slack ; End Point TNS ;
++-------------------------------------------------------+-------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.534 ; 0.000         ;
++-------------------------------------------------------+-------+---------------+
+
+
++-------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Hold Summary                                           ;
++-------------------------------------------------------+-------+---------------+
+; Clock                                                 ; Slack ; End Point TNS ;
++-------------------------------------------------------+-------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.412 ; 0.000         ;
++-------------------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV 100C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV 100C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Minimum Pulse Width                                                                                                                                                               ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock                                                 ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; 9.865  ; 9.595        ; 0.000          ; 0.270 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 9.865  ; 9.595        ; 0.000          ; 0.270 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 9.891  ; 9.891        ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 9.921  ; 9.835        ; 0.000          ; 0.086 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.077 ; 9.991        ; 0.000          ; 0.086 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.109 ; 10.109       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 10.131 ; 9.861        ; 0.000          ; 0.270 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 10.131 ; 9.861        ; 0.000          ; 0.270 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 16.000 ; 20.000       ; 4.000          ; 0.000 ; Port Rate        ; sys_clk                                               ; Rise       ; sys_clk                                                         ;
+; 19.709 ; 19.469       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[11][8]                        ;
+; 19.709 ; 19.469       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[15][8]                        ;
+; 19.709 ; 19.470       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][2]                        ;
+; 19.709 ; 19.470       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][3]                        ;
+; 19.709 ; 19.470       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][4]                        ;
+; 19.709 ; 19.470       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][5]                        ;
+; 19.709 ; 19.470       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][7]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[1]                            ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[2]                            ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[3]                            ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[4]                            ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][3]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][9]                         ;
+; 19.710 ; 19.469       ; 0.220          ; 0.461 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][3]                        ;
+; 19.710 ; 19.469       ; 0.220          ; 0.461 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][4]                        ;
+; 19.710 ; 19.469       ; 0.220          ; 0.461 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][8]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][2]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][3]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][4]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][6]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][8]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][6]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][8]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][8]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][4]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][6]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][7]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][9]                         ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[21][6]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[24][9]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[25][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][6]                        ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[29][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[29][6]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[31][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[31][6]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[3][4]                         ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[4][3]                         ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[4][4]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[4][5]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[5][4]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[5][6]                         ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[6][4]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[6][5]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[7][4]                         ;
+; 19.710 ; 19.469       ; 0.220          ; 0.461 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[7][8]                         ;
+; 19.710 ; 19.471       ; 0.220          ; 0.459 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[8][3]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[9][8]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[0][8]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[0][9]                         ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][3]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][6]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][7]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[10][9]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[11][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[11][4]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[11][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][3]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[13][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[13][3]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[13][5]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[14][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[14][3]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[15][2]                        ;
+; 19.710 ; 19.470       ; 0.220          ; 0.460 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[15][3]                        ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                        ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; 8.171  ; 8.648  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; 7.551  ; 7.905  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; 8.096  ; 8.522  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; 7.852  ; 8.255  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; 8.171  ; 8.648  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; 13.924 ; 14.257 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; 10.777 ; 11.069 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                         ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; -4.888 ; -5.362 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; -4.888 ; -5.362 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; -5.549 ; -6.060 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; -5.098 ; -5.584 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; -5.810 ; -6.189 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; -5.986 ; -6.448 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; -5.086 ; -5.460 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 6.344 ; 6.457 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 9.730 ; 9.694 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 8.099 ; 8.110 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 9.280 ; 9.159 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 9.730 ; 9.694 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 7.508 ; 7.313 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 4.973 ; 4.964 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 5.457 ; 5.473 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 5.457 ; 5.473 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 6.304 ; 6.216 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 6.619 ; 6.592 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 5.687 ; 5.509 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Fmax Summary                                                        ;
++-----------+-----------------+-------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                            ; Note ;
++-----------+-----------------+-------------------------------------------------------+------+
+; 28.61 MHz ; 28.61 MHz       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;      ;
++-----------+-----------------+-------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Setup Summary                                          ;
++-------------------------------------------------------+-------+---------------+
+; Clock                                                 ; Slack ; End Point TNS ;
++-------------------------------------------------------+-------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 5.045 ; 0.000         ;
++-------------------------------------------------------+-------+---------------+
+
+
++-------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Hold Summary                                           ;
++-------------------------------------------------------+-------+---------------+
+; Clock                                                 ; Slack ; End Point TNS ;
++-------------------------------------------------------+-------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.340 ; 0.000         ;
++-------------------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Minimum Pulse Width                                                                                                                                                               ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock                                                 ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; 9.848  ; 9.623        ; 0.000          ; 0.225 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 9.848  ; 9.623        ; 0.000          ; 0.225 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 9.895  ; 9.895        ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 9.914  ; 9.842        ; 0.000          ; 0.072 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.086 ; 10.014       ; 0.000          ; 0.072 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.105 ; 10.105       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 10.151 ; 9.926        ; 0.000          ; 0.225 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 10.151 ; 9.926        ; 0.000          ; 0.225 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 16.000 ; 20.000       ; 4.000          ; 0.000 ; Port Rate        ; sys_clk                                               ; Rise       ; sys_clk                                                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][5]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][5]                        ;
+; 19.710 ; 19.553       ; 0.218          ; 0.375 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][3]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[21][3]                        ;
+; 19.710 ; 19.553       ; 0.218          ; 0.375 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[3][3]                         ;
+; 19.710 ; 19.553       ; 0.218          ; 0.375 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[5][3]                         ;
+; 19.710 ; 19.553       ; 0.218          ; 0.375 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[7][3]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[9][3]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[11][4]                        ;
+; 19.710 ; 19.551       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][9]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[13][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[15][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[15][4]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[1][5]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[21][2]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[22][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[22][4]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[23][2]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[27][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[28][4]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[30][4]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[31][3]                        ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[3][5]                         ;
+; 19.710 ; 19.551       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[4][9]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[8][3]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[9][4]                         ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[21][17]                             ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[21][21]                             ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[21][25]                             ;
+; 19.710 ; 19.552       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[21][29]                             ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[0]                            ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][5]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][9]                         ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][3]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][4]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][5]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][8]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][7]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][2]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][3]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][4]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][8]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][7]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][2]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][4]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][5]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][8]                         ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][5]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][8]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[24][9]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[25][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[25][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][7]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][5]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[29][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[29][8]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[30][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[31][3]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[31][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[31][8]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[3][4]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[4][7]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[4][8]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[5][7]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[5][8]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[6][3]                         ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[7][4]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[8][7]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[8][8]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[9][7]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][7]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[12][8]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[13][9]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[18][4]                        ;
+; 19.711 ; 19.553       ; 0.218          ; 0.376 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[18][9]                        ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[1][2]                         ;
+; 19.711 ; 19.552       ; 0.218          ; 0.377 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[1][6]                         ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                        ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; 6.866  ; 7.151  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; 6.331  ; 6.510  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; 6.857  ; 6.984  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; 6.624  ; 6.764  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; 6.866  ; 7.151  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; 12.295 ; 11.850 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; 9.424  ; 9.158  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                         ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; -4.025 ; -4.243 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; -4.025 ; -4.243 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; -4.640 ; -4.842 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; -4.196 ; -4.480 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; -4.874 ; -4.970 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; -5.008 ; -5.154 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; -4.205 ; -4.329 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 6.124 ; 6.154 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 9.229 ; 8.838 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 7.724 ; 7.526 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 8.816 ; 8.423 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 9.229 ; 8.838 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 7.241 ; 6.853 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 5.005 ; 4.809 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 5.401 ; 5.286 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 5.401 ; 5.286 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 6.242 ; 5.896 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 6.541 ; 6.180 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 5.684 ; 5.266 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Setup Summary                                           ;
++-------------------------------------------------------+--------+---------------+
+; Clock                                                 ; Slack  ; End Point TNS ;
++-------------------------------------------------------+--------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 21.262 ; 0.000         ;
++-------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Hold Summary                                           ;
++-------------------------------------------------------+-------+---------------+
+; Clock                                                 ; Slack ; End Point TNS ;
++-------------------------------------------------------+-------+---------------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.176 ; 0.000         ;
++-------------------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Fast 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Minimum Pulse Width                                                                                                                                                               ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock                                                 ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+; 9.611  ; 9.477        ; 0.000          ; 0.134 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 9.611  ; 9.477        ; 0.000          ; 0.134 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 9.628  ; 9.628        ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 9.637  ; 9.594        ; 0.000          ; 0.043 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.000 ; 10.000       ; 0.000          ; 0.000 ; Low Pulse Width  ; sys_clk                                               ; Rise       ; sys_clk~input|i                                                 ;
+; 10.363 ; 10.320       ; 0.000          ; 0.043 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]         ;
+; 10.372 ; 10.372       ; 0.000          ; 0.000 ; High Pulse Width ; sys_clk                                               ; Rise       ; sys_clk~input|o                                                 ;
+; 10.388 ; 10.254       ; 0.000          ; 0.134 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0]           ;
+; 10.388 ; 10.254       ; 0.000          ; 0.134 ; High Pulse Width ; sys_clk                                               ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|observablevcoout ;
+; 16.000 ; 20.000       ; 4.000          ; 0.000 ; Port Rate        ; sys_clk                                               ; Rise       ; sys_clk                                                         ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[17][2]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[19][2]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[25][2]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][2]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][3]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][4]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][5]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[26][7]                        ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[5][3]                         ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_y[7][3]                         ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[15][17]                             ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[15][21]                             ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[15][29]                             ;
+; 19.781 ; 19.771       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|r[3][17]                              ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_l[0]                            ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][5]                         ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][7]                         ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[0][9]                         ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[10][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][3]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][4]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[11][8]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][2]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][3]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][4]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[12][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[13][8]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][2]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][4]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][8]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[14][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][4]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][8]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[15][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][8]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[16][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][7]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[17][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][4]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[18][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[19][7]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][2]                         ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][4]                         ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][6]                         ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][7]                         ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][8]                         ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[1][9]                         ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][8]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[20][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[21][2]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[21][5]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[21][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][7]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][8]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[22][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[23][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[23][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[24][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[25][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[26][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[26][4]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[26][5]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[26][9]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[27][2]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][2]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][3]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][4]                        ;
+; 19.782 ; 19.772       ; 0.216          ; 0.226 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][5]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][6]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[28][8]                        ;
+; 19.782 ; 19.771       ; 0.216          ; 0.227 ; High Pulse Width ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; Rise       ; vga_display:u_vga_display|block_x[29][2]                        ;
++--------+--------------+----------------+-------+------------------+-------------------------------------------------------+------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                      ;
++----------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+-------+-------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; 3.890 ; 4.558 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; 3.580 ; 4.188 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; 3.865 ; 4.558 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; 3.728 ; 4.398 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; 3.890 ; 4.536 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; 6.503 ; 7.624 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; 5.072 ; 6.018 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                         ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; -2.327 ; -2.995 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; -2.327 ; -2.995 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; -2.653 ; -3.364 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; -2.490 ; -3.122 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; -2.740 ; -3.441 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; -2.791 ; -3.494 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; -2.387 ; -3.036 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 3.091 ; 3.196 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 4.580 ; 4.831 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 3.840 ; 4.011 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 4.379 ; 4.580 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 4.580 ; 4.831 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 3.542 ; 3.682 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 2.407 ; 2.567 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 2.641 ; 2.762 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 2.641 ; 2.762 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 3.024 ; 3.254 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 3.172 ; 3.434 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 2.705 ; 2.863 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                               ;
++--------------------------------------------------------+-------+-------+----------+---------+---------------------+
+; Clock                                                  ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------------------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack                                       ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.534 ; 0.176 ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS                                        ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; N/A                 ;
+;  u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; 0.000 ; 0.000 ; N/A      ; N/A     ; N/A                 ;
++--------------------------------------------------------+-------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                        ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; 8.171  ; 8.648  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; 7.551  ; 7.905  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; 8.096  ; 8.522  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; 7.852  ; 8.255  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; 8.171  ; 8.648  ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; 13.924 ; 14.257 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; 10.777 ; 11.069 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                         ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+; direct_x_w[*]  ; sys_clk    ; -2.327 ; -2.995 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[0] ; sys_clk    ; -2.327 ; -2.995 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[1] ; sys_clk    ; -2.653 ; -3.364 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[2] ; sys_clk    ; -2.490 ; -3.122 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  direct_x_w[3] ; sys_clk    ; -2.740 ; -3.441 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sta_en_w       ; sys_clk    ; -2.791 ; -3.494 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; sys_rst_n      ; sys_clk    ; -2.387 ; -3.036 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++----------------+------------+--------+--------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 6.344 ; 6.457 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 9.730 ; 9.694 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 8.099 ; 8.110 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 9.280 ; 9.159 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 9.730 ; 9.694 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 7.508 ; 7.313 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+; vga_hs      ; sys_clk    ; 2.407 ; 2.567 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_rgb[*]  ; sys_clk    ; 2.641 ; 2.762 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[0] ; sys_clk    ; 2.641 ; 2.762 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[1] ; sys_clk    ; 3.024 ; 3.254 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+;  vga_rgb[2] ; sys_clk    ; 3.172 ; 3.434 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
+; vga_vs      ; sys_clk    ; 2.705 ; 2.863 ; Rise       ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ;
++-------------+------------+-------+-------+------------+-------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; vga_hs        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; vga_vs        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; vga_rgb[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; vga_rgb[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; vga_rgb[2]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; sys_rst_n               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sys_clk                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sta_en_w                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; direct_x_w[0]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; direct_x_w[3]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; direct_x_w[1]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; direct_x_w[2]           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; vga_hs        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.72e-007 V                  ; 2.34 V              ; -0.00862 V          ; 0.126 V                              ; 0.038 V                              ; 6.76e-010 s                 ; 6.44e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.72e-007 V                 ; 2.34 V             ; -0.00862 V         ; 0.126 V                             ; 0.038 V                             ; 6.76e-010 s                ; 6.44e-010 s                ; Yes                       ; Yes                       ;
+; vga_vs        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.72e-007 V                  ; 2.34 V              ; -0.00862 V          ; 0.126 V                              ; 0.038 V                              ; 6.76e-010 s                 ; 6.44e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.72e-007 V                 ; 2.34 V             ; -0.00862 V         ; 0.126 V                             ; 0.038 V                             ; 6.76e-010 s                ; 6.44e-010 s                ; Yes                       ; Yes                       ;
+; vga_rgb[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.72e-007 V                  ; 2.34 V              ; -0.00862 V          ; 0.126 V                              ; 0.038 V                              ; 6.76e-010 s                 ; 6.44e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.72e-007 V                 ; 2.34 V             ; -0.00862 V         ; 0.126 V                             ; 0.038 V                             ; 6.76e-010 s                ; 6.44e-010 s                ; Yes                       ; Yes                       ;
+; vga_rgb[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.72e-007 V                  ; 2.34 V              ; -0.00862 V          ; 0.126 V                              ; 0.038 V                              ; 6.76e-010 s                 ; 6.44e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.72e-007 V                 ; 2.34 V             ; -0.00862 V         ; 0.126 V                             ; 0.038 V                             ; 6.76e-010 s                ; 6.44e-010 s                ; Yes                       ; Yes                       ;
+; vga_rgb[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.72e-007 V                  ; 2.34 V              ; -0.00862 V          ; 0.126 V                              ; 0.038 V                              ; 6.76e-010 s                 ; 6.44e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.72e-007 V                 ; 2.34 V             ; -0.00862 V         ; 0.126 V                             ; 0.038 V                             ; 6.76e-010 s                ; 6.44e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.17e-007 V                  ; 2.35 V              ; -0.0095 V           ; 0.088 V                              ; 0.032 V                              ; 4.4e-010 s                  ; 3.76e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 6.17e-007 V                 ; 2.35 V             ; -0.0095 V          ; 0.088 V                             ; 0.032 V                             ; 4.4e-010 s                 ; 3.76e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.02e-006 V                  ; 2.34 V              ; -0.00682 V          ; 0.098 V                              ; 0.024 V                              ; 6.43e-010 s                 ; 8.11e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.02e-006 V                 ; 2.34 V             ; -0.00682 V         ; 0.098 V                             ; 0.024 V                             ; 6.43e-010 s                ; 8.11e-010 s                ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; vga_hs        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.42e-009 V                  ; 2.73 V              ; -0.0571 V           ; 0.287 V                              ; 0.074 V                              ; 2.99e-010 s                 ; 3.27e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.42e-009 V                 ; 2.73 V             ; -0.0571 V          ; 0.287 V                             ; 0.074 V                             ; 2.99e-010 s                ; 3.27e-010 s                ; No                        ; Yes                       ;
+; vga_vs        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.42e-009 V                  ; 2.73 V              ; -0.0571 V           ; 0.287 V                              ; 0.074 V                              ; 2.99e-010 s                 ; 3.27e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.42e-009 V                 ; 2.73 V             ; -0.0571 V          ; 0.287 V                             ; 0.074 V                             ; 2.99e-010 s                ; 3.27e-010 s                ; No                        ; Yes                       ;
+; vga_rgb[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.42e-009 V                  ; 2.73 V              ; -0.0571 V           ; 0.287 V                              ; 0.074 V                              ; 2.99e-010 s                 ; 3.27e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.42e-009 V                 ; 2.73 V             ; -0.0571 V          ; 0.287 V                             ; 0.074 V                             ; 2.99e-010 s                ; 3.27e-010 s                ; No                        ; Yes                       ;
+; vga_rgb[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.42e-009 V                  ; 2.73 V              ; -0.0571 V           ; 0.287 V                              ; 0.074 V                              ; 2.99e-010 s                 ; 3.27e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.42e-009 V                 ; 2.73 V             ; -0.0571 V          ; 0.287 V                             ; 0.074 V                             ; 2.99e-010 s                ; 3.27e-010 s                ; No                        ; Yes                       ;
+; vga_rgb[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.42e-009 V                  ; 2.73 V              ; -0.0571 V           ; 0.287 V                              ; 0.074 V                              ; 2.99e-010 s                 ; 3.27e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.42e-009 V                 ; 2.73 V             ; -0.0571 V          ; 0.287 V                             ; 0.074 V                             ; 2.99e-010 s                ; 3.27e-010 s                ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.95e-009 V                  ; 2.79 V              ; -0.0515 V           ; 0.184 V                              ; 0.063 V                              ; 2.64e-010 s                 ; 1.96e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 1.95e-009 V                 ; 2.79 V             ; -0.0515 V          ; 0.184 V                             ; 0.063 V                             ; 2.64e-010 s                ; 1.96e-010 s                ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.87e-009 V                  ; 2.73 V              ; -0.0179 V           ; 0.231 V                              ; 0.029 V                              ; 2.89e-010 s                 ; 4.54e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 2.87e-009 V                 ; 2.73 V             ; -0.0179 V          ; 0.231 V                             ; 0.029 V                             ; 2.89e-010 s                ; 4.54e-010 s                ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                               ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+; From Clock                                            ; To Clock                                              ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; > 2147483647 ; 0        ; 0        ; 0        ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+; From Clock                                            ; To Clock                                              ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; u_vga_pll|altpll_component|auto_generated|pll1|clk[0] ; > 2147483647 ; 0        ; 0        ; 0        ;
++-------------------------------------------------------+-------------------------------------------------------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 2668  ; 2668 ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 77    ; 77   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Mon Dec 23 16:12:57 2019
+Info: Command: quartus_sta snake -c snake
+Info: qsta_default_script.tcl version: #3
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Core supply voltage is 1.2V
+Info: Low junction temperature is -40 degrees C
+Info: High junction temperature is 100 degrees C
+Critical Warning: Synopsys Design Constraints File file not found: 'snake.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info: Deriving PLL Clocks
+    Info: create_clock -period 20.000 -waveform {0.000 10.000} -name sys_clk sys_clk
+    Info: create_generated_clock -source {u_vga_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 2 -duty_cycle 50.00 -name {u_vga_pll|altpll_component|auto_generated|pll1|clk[0]} {u_vga_pll|altpll_component|auto_generated|pll1|clk[0]}
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) to u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
+Info: Analyzing Slow 1200mV 100C Model
+Info: Worst-case setup slack is 0.534
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.534         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: Worst-case hold slack is 0.412
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.412         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: No recovery paths to report
+Info: No removal paths to report
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Analyzing Slow 1200mV -40C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) to u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
+Info: Worst-case setup slack is 5.045
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     5.045         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: Worst-case hold slack is 0.340
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.340         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: No recovery paths to report
+Info: No removal paths to report
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Analyzing Fast 1200mV -40C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) to u_vga_pll|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
+Info: Worst-case setup slack is 21.262
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    21.262         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: Worst-case hold slack is 0.176
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.176         0.000 u_vga_pll|altpll_component|auto_generated|pll1|clk[0] 
+Info: No recovery paths to report
+Info: No removal paths to report
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 319 megabytes
+    Info: Processing ended: Mon Dec 23 16:13:06 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:10
+
+
